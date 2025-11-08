@@ -1,30 +1,36 @@
-# React + FastAPI Full Stack Deployment on AWS
+
+---
+
+# 🚀 React + FastAPI Full Stack Deployment on AWS
 
 This project demonstrates the deployment of a full-stack web application built with **React (frontend)** and **FastAPI (backend)** using **Docker**, **Amazon ECR**, and **Amazon EC2**.
 
-Both services are containerized, pushed to AWS ECR (Elastic Container Registry), and deployed on an EC2 instance using Docker Compose.
+Both services are containerized, pushed to **AWS ECR (Elastic Container Registry)**, and deployed on an **EC2 instance** using **Docker Compose**.
 
 ---
 
 ## 📁 Project Overview
 
-**Goal:**  
+**Goal:**
 Deploy a containerized frontend and backend application to an AWS EC2 instance using Docker Compose, pulling images directly from AWS ECR.
 
 **Tech Stack:**
-- Frontend: React (JavaScript)
-- Backend: FastAPI (Python)
-- Containerization: Docker & Docker Compose
-- Cloud Platform: Amazon Web Services (AWS)
-  - Elastic Container Registry (ECR)
-  - Elastic Compute Cloud (EC2)
-- OS: Amazon Linux 2
+
+* **Frontend:** React (JavaScript)
+* **Backend:** FastAPI (Python)
+* **Containerization:** Docker & Docker Compose
+* **Cloud Platform:** Amazon Web Services (AWS)
+
+  * Elastic Container Registry (ECR)
+  * Elastic Compute Cloud (EC2)
+* **OS:** Amazon Linux 2
 
 ---
 
 ## 🏗️ Steps to Deploy
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/BorgOwen/react-fastapi-app.git
 cd react-fastapi-app
@@ -50,7 +56,7 @@ docker build -t react-frontend ./React
 
 ### 3. Create ECR Repositories
 
-In the AWS Console or CLI:
+In the AWS Console or via CLI:
 
 ```bash
 aws ecr create-repository --repository-name fastapi-backend --region eu-north-1
@@ -60,8 +66,6 @@ aws ecr create-repository --repository-name react-frontend --region eu-north-1
 ---
 
 ### 4. Authenticate Docker with ECR
-
-#### Private ECR's
 
 ```bash
 aws ecr get-login-password --region eu-north-1 \
@@ -110,9 +114,9 @@ services:
 
 ### 7. Deploy to EC2
 
-1. **Launch an EC2 instance** (Amazon Linux 2)
+1. **Launch an EC2 instance** (Amazon Linux 2).
 
-2. **Allow inbound rules** for ports `22`, `3000`, and `8000`
+2. **Allow inbound rules** for ports `22`, `3000`, and `8000`.
 
 3. **Install Docker and Docker Compose:**
 
@@ -127,7 +131,7 @@ services:
    sudo chmod +x /usr/local/bin/docker-compose
    ```
 
-4. **Copy the docker-compose.yml file** to your EC2 instance(EC2 instance connect):
+4. **Copy the docker-compose.yml file** to your EC2 instance (via EC2 Instance Connect):
 
    ```bash
    nano docker-compose.yml
@@ -143,8 +147,6 @@ services:
 
 ### 8. Verify Deployment
 
-Run:
-
 ```bash
 docker ps
 ```
@@ -153,17 +155,29 @@ Then visit:
 
 * Frontend: [http://16.16.233.59:3000](http://16.16.233.59:3000)
 * Backend: [http://16.16.233.59:8000/docs](http://16.16.233.59:8000/docs)
-* ![Frontend Screenshot](./reactapp.PNG)
-* ![Backend Diagram](./fastapi.PNG)
 
+---
+
+## 🖼️ Screenshots
+
+### Frontend
+
+![Frontend Screenshot](./reactapp.PNG)
+
+### Backend
+
+![Backend Diagram](./fastapi.PNG)
 
 ---
 
 ## 🔗 Useful Links
 
-* **ECR Backend Image:** `784908116787.dkr.ecr.eu-north-1.amazonaws.com/fastapi-backend:latest`
-* **ECR Frontend Image:** `784908116787.dkr.ecr.eu-north-1.amazonaws.com/react-frontend:latest`
-* **Deployed Site:** [http://16.16.233.59:3000](http://16.16.233.59:3000)
+* **ECR Backend Image:**
+  `784908116787.dkr.ecr.eu-north-1.amazonaws.com/fastapi-backend:latest`
+* **ECR Frontend Image:**
+  `784908116787.dkr.ecr.eu-north-1.amazonaws.com/react-frontend:latest`
+* **Deployed Site:**
+  [http://16.16.233.59:3000](http://16.16.233.59:3000)
 
 ---
 
@@ -176,4 +190,6 @@ This project showcases a standard **DevOps workflow**:
 3. Deploy on a compute instance (EC2) using Docker Compose
 4. Access deployed services via public endpoints
 
+---
 
+Would you like me to make a version that includes **architecture diagrams**, badges (e.g. Docker, AWS, FastAPI, React), and a **banner image** at the top — like a professional portfolio-style README for your GitHub profile?
