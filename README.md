@@ -1,6 +1,3 @@
-
-
-````markdown
 # React + FastAPI Full Stack Deployment on AWS
 
 This project demonstrates the deployment of a full-stack web application built with **React (frontend)** and **FastAPI (backend)** using **Docker**, **Amazon ECR**, and **Amazon EC2**.
