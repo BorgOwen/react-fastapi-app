@@ -108,7 +108,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_API_URL=http://<EC2_PUBLIC_IP>:8000
+      - REACT_APP_API_URL=http://16.16.233.59:8000
     depends_on:
       - backend
 ```
@@ -156,17 +156,13 @@ Run:
 docker ps
 ```
 
-Expected:
-
-```
-fastapi-backend   Up 0.0.0.0:8000->8000/tcp
-react-frontend    Up 0.0.0.0:3000->3000/tcp
-```
-
 Then visit:
 
 * Frontend: [http://16.16.233.59:3000](http://16.16.233.59:3000)
 * Backend: [http://16.16.233.59:8000/docs](http://16.16.233.59:8000/docs)
+* ![Frontend Screenshot](./reactapp.PNG)
+* ![Backend Diagram](./fastapi.PNG)
+
 
 ---
 
@@ -189,13 +185,4 @@ This project showcases a standard **DevOps workflow**:
 
 ---
 
-**Author:** Tolu Ogunwenmo
-**Date:** November 2025
-**Region:** eu-north-1
-**Deployment:** AWS EC2 + ECR + Docker Compose
 
-```
-
----
-
-```
